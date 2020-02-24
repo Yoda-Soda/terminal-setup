@@ -47,9 +47,34 @@ Steps for getting a customizable terminal config.
 
       - Save config file.
 
-7. Restart the terminal or import the new settings:
+7. Install `Powerline` symbols/fonts for the `Starship` prompt.
+
+    - Download the `PowerlineSymbols.otf` font pack from Github: https://github.com/powerline/powerline/tree/develop/font
+
+    - Double click / open the downloaded font pack. This will open a `Font Book` window.
+
+      - Click on the `Install font` button to install the font onto your system.
+
+    - Update the iTerm preferences to use the `Powerline` fonts.
+
+      - Switch to an iTerm window and click on the `iTerm2` menu item in the top left corner of the screen. Then select `Preferences`. Or use the shortcut keys `command` + `,`
+
+      - In the `Preferences` window, switch to the `Profiles` tab (in the top of the Preferences window).
+
+      - Select a profile (if not using the `Default` profile).
+
+      - Select the `Text` tab on the right section.
+
+      - Find and check the option `Use a different font form non-ASCII text`. This should now display the `Non-ASCII Font` section under the checkbox.
+
+      - In the `Non-ASCII Font` section, click the font selection box and select `PowerlineSymbols`.
+
+8. Restart the terminal or import the new settings:
 
     - ```shell
       source ~/.zshrc
       ```
 
+Now you should have a terminal that looks something like this:
+
+![Terminal](./terminal.png)
