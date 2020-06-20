@@ -18,16 +18,32 @@ Steps for getting a customizable terminal config.
     - To be able to access the application from the Launchpad we need to drag the application into the application folder:
     ![opening iterm](move_application.gif)
     
-1. Next we will install something to help us with suggestions in our terminal. Let us Install [Starship](https://starship.rs/guide/#with-homebrew). Follow the links installation instructions and then come back to the next stem here. 
+1. Now we need to get someway of addding plugins to our terminal. We will install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh#basic-installation), a  community-driven framework for managing your zsh configuration. Input the following scripts:
+    1.  ```bash
+        brew install zsh
+        ```
+    1.  ```bash
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        ```
 
-1. Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh#basic-installation), a  community-driven framework for managing your zsh configuration.
+1. Next we will install something to assist us with our terminal commands. We will be Installing [Starship](https://starship.rs/guide/#with-homebrew).
+    1.  ```bash
+        brew install starship
+        ```
+        - follow any prompts. Then run:
+    1.  ```bash
+        echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+        ```
+        - Restart the terminal to let the configuration take effect.
 
 1. Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) to enable syntax highlighting in the terminal.
+    ```bash
+    brew install zsh-syntax-highlighting 
+    ```
 
-6. Edit the `.zshrc` config file to enable the installed prompts and plugins.
+6. Now to enable the installation prompts and plugins edit the `.zshrc` config file
 
-    - Open the terminal.
-    - Open the `.zshrc` config file in a text editor:
+    - In the terminal open the `.zshrc` config file in a text editor (VIM this case):
 
       ```bash
       vim ~/.zshrc
@@ -49,23 +65,16 @@ Steps for getting a customizable terminal config.
         ```
       - See this [FAQ for why the zsh-syntax-highlight plugin needs to go last](https://github.com/zsh-users/zsh-syntax-highlighting#why-must-zsh-syntax-highlightingzsh-be-sourced-at-the-end-of-the-zshrc-file).
 
-    - Finally enable the `Starship` prompt:
-
-      - Scroll to the end of the config and paste the following:
-
-      - ```bash
-        eval "$(starship init zsh)"
-        ```
-
       - Save config file.
 
 7. Install `Powerline` symbols/fonts for the `Starship` prompt.
 
-    - Download the `PowerlineSymbols.otf` font pack from Github: https://github.com/powerline/powerline/tree/develop/font
+    - Download the `PowerlineSymbols.otf` font pack from Github: https://github.com/powerline/powerline/blob/develop/font/PowerlineSymbols.otf
 
     - Double click / open the downloaded font pack. This will open a `Font Book` window.
 
       - Click on the `Install font` button to install the font onto your system.
+      ![Install font](install_font.png)
 
     - Update the iTerm preferences to use the `Powerline` fonts.
 
@@ -80,6 +89,7 @@ Steps for getting a customizable terminal config.
       - Find and check the option `Use a different font form non-ASCII text`. This should now display the `Non-ASCII Font` section under the checkbox.
 
       - In the `Non-ASCII Font` section, click the font selection box and select `PowerlineSymbols`.
+      ![selecting the powerlinefont](font_selection.png)
 
 8. Restart the terminal or import the new settings:
 
