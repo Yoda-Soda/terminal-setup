@@ -2,35 +2,47 @@
 
 Steps for getting a customizable terminal config.
 
-1. Install [Homebrew](https://brew.sh/) package manager for MacOS.
+1. First we will install a package manager for MacOS called [Homebrew](https://brew.sh/)
+    - Open the terminal by clicking on the Launchpad Icon at the bottom and typing the word `terminal`:
 
-2. Install [iTerm2](https://iterm2.com/) terminal emulator.
+      ![launchpad icon](select_terminal.png)
+      
+    - Copy and paste the following script into your Terminal and hit enter: 
+      ```bash
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+      ```
+      
+1. Next we will replace our terminal with [iTerm2](https://iterm2.com/) a terminal emulator. Download the latest stable release. Unzip the download by opening the file with the Archive Utility
+    
+    ![opening iterm](open_iterm.png)
+    - To be able to access the application from the Launchpad we need to drag the application into the application folder:
+    ![opening iterm](move_application.gif)
+    
+1. Next we will install something to help us with suggestions in our terminal. Let us Install [Starship](https://starship.rs/guide/#with-homebrew). Follow the links installation instructions and then come back to the next stem here. 
 
-3. Install [Starship](https://starship.rs/guide/#with-homebrew) cross-shell prompt.
+1. Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh#basic-installation), a  community-driven framework for managing your zsh configuration.
 
-4. Install [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh#basic-installation), a  community-driven framework for managing your zsh configuration.
-
-5. Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) to enable syntax highlighting in the terminal.
+1. Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) to enable syntax highlighting in the terminal.
 
 6. Edit the `.zshrc` config file to enable the installed prompts and plugins.
 
     - Open the terminal.
     - Open the `.zshrc` config file in a text editor:
 
-      - ```shell
-        vim ~/.zshrc
-        ```
+      ```bash
+      vim ~/.zshrc
+      ```
 
     - Now find the line starting with `ZSH_THEME=` and comment the line out by adding a `#` at the start of the line.
 
-      - ```shell
-        # example config
-        # ZSH_THEME="robbyrussell"
-        ```
+      ```bash
+      # example config
+      # ZSH_THEME="robbyrussell"
+      ```
 
     - Then enable the `zsh-syntax-highlighting` plugin. Find the `plugin` directive in the config file and add `zsh-syntax-highlighting` to the end of the list of plugins:
 
-      - ```shell
+      ```bash
         # Note, the 'zsh-syntax-highlight' plugin
         # "NEEDS" to go at the end of the the list 
         plugins=(git brew npm zsh-syntax-highlighting)
@@ -41,7 +53,7 @@ Steps for getting a customizable terminal config.
 
       - Scroll to the end of the config and paste the following:
 
-      - ```shell
+      - ```bash
         eval "$(starship init zsh)"
         ```
 
